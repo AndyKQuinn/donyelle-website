@@ -2,20 +2,20 @@
 
 ## Develop
 
-1. Serve pocketbase:
+Serve pocketbase:
 
 ```sh
 ./pocketbase serve
 ```
 
-1. Copy `.env.example` to `.env` and update values accordingly.
-1. Install dependencies:
+Copy `.env.example` to `.env` and update values accordingly.
+Install dependencies:
 
 ```sh
 npm install
 ```
 
-1. Serve the client:
+Serve the client:
 
 ```bash
 npm run dev

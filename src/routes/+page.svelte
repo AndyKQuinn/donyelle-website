@@ -9,11 +9,3 @@
 {:else}
   <p>Not logged in</p>
 {/if}
-
-<p>
-  Visit
-  <a href="https://github.com/jianyuan/pocketbase-sveltekit-auth">
-    our GitHub repository
-  </a>
-  to read the documentation.
-</p>

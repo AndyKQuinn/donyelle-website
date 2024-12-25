@@ -8,6 +8,7 @@
   import { onDestroy, type Snippet } from 'svelte'
   import { writable } from 'svelte/store'
   import type { PageData } from './$types'
+  import { page } from '$app/stores'
 
   interface Props {
     data: PageData
@@ -34,14 +35,24 @@
 </script>
 
 <div class="bg-neutral text-neutral-content">
-  <div class="mx-auto navbar">
-    <div class="navbar-start">
-      <a href="/" class="btn btn-ghost text-xl">Sveltekit w/ Pocketbase</a>
+  <div class="mx-auto navbar flex-col sm:flex-row">
+    <div class="navbar-start hidden sm:block">
+      <a
+        href="/"
+        class="btn btn-ghost text-xl hover:text-primary transition-colors duration-200"
+        class:text-primary={$page.url.pathname === '/'}
+      >Donyelle Headington</a>
     </div>
-    <div class="navbar-end">
-      <ul class="menu menu-horizontal">
+    <div class="navbar-end w-full justify-center sm:justify-end">
+      <ul class="menu menu-horizontal gap-2">
         {#if $user}
-          <li><a href="/">{$user.email}</a></li>
+          <li>
+            <a
+              href="/"
+              class="hover:text-primary transition-colors duration-200"
+              class:text-primary={$page.url.pathname === '/'}
+            >{$user.email}</a>
+          </li>
           <li>
             <form
               method="POST"
@@ -53,18 +64,32 @@
                 }
               }}
             >
-              <button>Log out</button>
+              <button class="hover:text-primary transition-colors duration-200">Log out</button>
             </form>
           </li>
         {:else}
-          <li><a href="/login">Log in</a></li>
-          <li><a href="/register">Register</a></li>
+          {#each [
+            { href: '/', label: 'Home' },
+            { href: '/about', label: 'About' },
+            { href: '/services', label: 'Services' },
+            { href: '/contact', label: 'Contact' }
+          ] as link}
+            <li class="text-md sm:text-xl">
+              <a
+                href={link.href}
+                class="hover:text-primary transition-colors duration-200"
+                class:text-primary={$page.url.pathname === link.href}
+              >{link.label}</a>
+            </li>
+          {/each}
         {/if}
       </ul>
     </div>
   </div>
 </div>
 
-<div class="max-w-xl mx-auto py-8 px-4">
+<div class="mx-auto py-8 px-4">
   {@render children?.()}
 </div>
+
+<style></style>
