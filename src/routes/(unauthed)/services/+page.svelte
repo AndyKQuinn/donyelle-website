@@ -57,7 +57,7 @@
         <CardHeader>
           <div class="flex items-center justify-between">
             <CardTitle>{service.title}</CardTitle>
-            <Badge class="bg-purple-800 text-xl text-white">{service.price}</Badge>
+            <Badge class="text-xl text-white">{service.price}</Badge>
           </div>
           <CardDescription>{service.description}</CardDescription>
         </CardHeader>

@@ -10,7 +10,6 @@
   import type { PageData } from './$types'
   import { page } from '$app/stores'
 
-  // Import shadcn components
   import { Button } from "$lib/components/ui/button"
 
   interface Props {
@@ -20,15 +19,12 @@
 
   let { data, children }: Props = $props()
 
-  // Initialize user store
   const user = writable(data.user)
   setUserContext(user)
 
   if (browser) {
-    // Load user from cookie (client-side only)
     pb.authStore.loadFromCookie(document.cookie)
 
-    // Update user store when auth store changes
     const unsubscribe = pb.authStore.onChange(() => {
       user.set(pb.authStore.record)
       document.cookie = pb.authStore.exportToCookie({ httpOnly: false })
@@ -44,10 +40,10 @@
   ]
 </script>
 
-<div class="fixed top-0 left-0 right-0 bg-background border-b z-10">
+<div class="fixed top-0 left-0 right-0 border-b z-10 bg-secondary">
   <div class="container flex h-14 items-center justify-between">
     <div class="hidden md:block">
-      <a href="/" class="text-xl font-semibold">
+      <a href="/" class="text-xl">
         Donyelle Headington
       </a>
     </div>
@@ -56,7 +52,7 @@
       {#if $user}
         <a
           href="/"
-          class="text-sm font-medium transition-colors hover:text-primary"
+          class="text-sm hover:text-primary"
           class:text-primary={$page.url.pathname === '/'}
         >
           {$user.email}
@@ -78,7 +74,7 @@
           <Button
             href={item.href}
             variant="ghost"
-            class="text-xl"
+            class="text-lg"
           >
             {item.label}
           </Button>

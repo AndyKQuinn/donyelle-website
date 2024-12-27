@@ -5,6 +5,7 @@
 
 	import { onMount, onDestroy } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
+	import { Button } from '$lib/components/ui/button';
 
 	// Enhanced intersection observer with different thresholds per section
 	onMount(() => {
@@ -56,17 +57,29 @@
 
 <main class="overflow-x-hidden">
 	<section
-		id="hero"
 		class="relative flex min-h-screen items-center justify-center"
-		style="background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9))) center/cover"
 	>
-		<div class="text-center">
-			<h1 class="mb-6 text-5xl font-light text-emerald-800 md:text-7xl">
-				Begin Your Healing Journey
-			</h1>
-			<p class="mx-auto max-w-2xl text-xl text-emerald-600 md:text-2xl">
-				Find balance, peace, and natural healing through holistic practices
-			</p>
+		<div class="flex flex-col">
+		<div class="flex gap-8 align-center items-center">
+			<div class="text-center flex flex-col gap-2">
+				<h1 class="text-6xl font-light">
+					Begin Your Healing Journey
+				</h1>
+				<p class="mx-auto text-lg">
+					Find balance, peace, and natural healing through holistic practices
+				</p>
+				<div class="flex justify-center gap-4 p-4">
+
+					<Button>Learn More</Button>
+					<Button>View Services</Button>
+				</div>
+			</div>
+			<img src="/images/donyelle-face.png" alt="Hero" class="h-auto" />
+		</div>
+		<div id="promo-banner" class="flex mt-20 bg-red-200 align-center items-center rounded-xl p-4 justify-between">
+			<div>New plant diva workshop coming soon! Sign up now to get 20% off!</div>
+			<Button>Buy Tickets</Button>
+		</div>
 		</div>
 	</section>
 
@@ -74,8 +87,8 @@
 		<div
 			class="container mx-auto px-4"
 		>
-			<h2 class="mb-12 text-center text-4xl text-emerald-800">My Approach to Healing</h2>
-			<div class="mx-auto max-w-3xl text-lg leading-relaxed text-gray-700">
+			<h2 class="mb-12 text-center text-4xl">My Approach to Healing</h2>
+			<div class="mx-auto max-w-3xl text-lg leading-relaxed">
 				<p class="mb-6">
 					We believe in treating the whole person – body, mind, and spirit. My holistic approach
 					combines ancient wisdom with modern understanding to help you achieve optimal wellness.
@@ -88,9 +101,9 @@
 		</div>
 	</section>
 
-	<section id="services" class="bg-white py-20">
+	<section id="services" class="py-20">
 		<div class="container mx-auto px-4">
-			<h2 class="mb-12 text-center text-4xl text-emerald-800" in:fly={{ y: 50, duration: 1000 }}>
+			<h2 class="mb-12 text-center text-4xl" in:fly={{ y: 50, duration: 1000 }}>
 				My Services
 			</h2>
 			<div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
@@ -111,13 +124,13 @@
 		<div
 			class="container mx-auto px-4"
 		>
-			<h2 class="mb-12 text-center text-4xl text-emerald-800">Client Stories</h2>
+			<h2 class="mb-12 text-center text-4xl">Client Stories</h2>
 			<div class="mx-auto max-w-4xl">
 				{#each [testimonials[currentTestimonialIndex]] as testimonial (currentTestimonialIndex)}
 					<div in:fade={{ duration: 400 }}>
-						<blockquote class="text-center text-xl italic text-gray-700">
+						<blockquote class="text-center text-xl italic">
 							"{testimonial.quote}"
-							<footer class="mt-4 text-emerald-600">— {testimonial.author}</footer>
+							<footer class="mt-4">— {testimonial.author}</footer>
 						</blockquote>
 					</div>
 				{/each}
@@ -126,8 +139,8 @@
 						<button
 							class="h-2 w-2 rounded-full transition-colors duration-300 {i ===
 							currentTestimonialIndex
-								? 'bg-emerald-600'
-								: 'bg-emerald-200'}"
+								? 'bg-primary'
+								: 'bg-secondary'}"
 							on:click={() => (currentTestimonialIndex = i)}
 							aria-label="Go to testimonial {i + 1}"
 						></button>
@@ -137,7 +150,7 @@
 		</div>
 	</section>
 
-	<section id="footer" class="bg-emerald-800 py-12 text-white">
+	<section id="footer" class="bg-secondary py-12">
 		<div class="container mx-auto px-4">
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				<div>
@@ -154,20 +167,20 @@
 					</div>
 				</div>
 				<div>
-					<h3 class="mb-4 text-xl font-semibold">Hours</h3>
+					<h3 class="mb-4 text-xl">Hours</h3>
 					<p class="mb-2">Monday - Friday: 9am - 7pm</p>
 					<p class="mb-2">Saturday: 10am - 5pm</p>
 					<p>Sunday: Unavailable</p>
 				</div>
 				<div>
-					<h3 class="mb-4 text-xl font-semibold">Follow Us</h3>
+					<h3 class="mb-4 text-xl">Follow Us</h3>
 					<div class="flex gap-4 text-2xl">
 						<p>🐥</p>
 						<p>😈</p>
 					</div>
 				</div>
 			</div>
-			<div class="mt-8 border-t border-emerald-700 pt-8 text-center">
+			<div class="mt-8 pt-8 text-center">
 				<p>&copy; {new Date().getFullYear()} Donyelle Headington ~ All rights reserved.</p>
 			</div>
 		</div>

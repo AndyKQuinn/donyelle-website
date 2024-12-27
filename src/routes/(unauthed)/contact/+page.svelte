@@ -1,18 +1,20 @@
+<script>
+	import { Button } from '$lib/components/ui/button';
+</script>
+
 <main>
 	<section
-		id="hero"
 		class="relative flex min-h-screen items-center justify-center"
-		style="background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9))) center/cover"
 	>
 		<div class="mx-auto w-full max-w-2xl p-6">
 			<div class="mb-12 text-center">
-				<h1 class="mb-6 text-5xl font-light text-emerald-800 md:text-7xl">Contact Me</h1>
+				<h1 class="mb-6 text-5xl font-light md:text-7xl">Contact Me</h1>
 				<p class="text-lg text-gray-600">
 					I'd love to hear from you. Send me a message and I'll respond as soon as possible.
 				</p>
 			</div>
 
-			<form>
+			<form class="flex flex-col gap-4">
 				<div>
 					<label for="name" class="mb-1 block text-sm font-medium text-gray-700">Name</label>
 					<input
@@ -47,11 +49,11 @@
 				</div>
 
 				<div class="text-center">
-					<button
+					<Button
 						type="submit"
 					>
 						Send Message
-					</button>
+					</Button>
 				</div>
 			</form>
 		</div>
