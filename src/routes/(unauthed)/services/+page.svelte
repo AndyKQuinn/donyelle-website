@@ -1,5 +1,4 @@
 <script>
-
 	import {
 		Card,
 		CardContent,
@@ -9,7 +8,8 @@
 		CardTitle
 	} from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
-  import { Check, GraduationCap } from 'lucide-svelte';
+  import { Button } from '$lib/components/ui/button';
+
 	const services = [
 		{
 			title: 'Service Title',
@@ -37,7 +37,6 @@
 		}
 	];
 
-	import { Button } from '$lib/components/ui/button';
   import * as Dialog from "$lib/components/ui/dialog";
 
 </script>
@@ -68,33 +67,26 @@
             {/each}
           </ul>
         </CardContent>
-        <CardFooter class="flex w-full justify-center gap-8">
+        <CardFooter class="flex justify-center gap-8">
           <Dialog.Root>
-            <Dialog.Trigger class="flex gap-2 bg-primary text-white px-4 py-2 rounded-md"><GraduationCap />Learn More</Dialog.Trigger>
+            <Dialog.Trigger class="flex gap-2 bg-primary text-white px-4 py-2 rounded-md">
+              Learn More
+            </Dialog.Trigger>
             <Dialog.Content>
               <Dialog.Header>
-                <Dialog.Title>Are you sure absolutely sure?</Dialog.Title>
+                <Dialog.Title>More Details</Dialog.Title>
                 <Dialog.Description>
-                  This action cannot be undone. This will permanently delete your account
-                  and remove your data from our servers.
+                  Here is where we will provide more details about the service. All sorts of juicy awesome tidbits of information.
                 </Dialog.Description>
+                <Dialog.Close>
+                  <Button>Close</Button>
+                </Dialog.Close>
               </Dialog.Header>
             </Dialog.Content>
           </Dialog.Root>
-          <Dialog.Root>
-            <Dialog.Trigger class="flex gap-2 bg-primary text-white px-4 py-2 rounded-md"><Check />Sign Up</Dialog.Trigger>
-            <Dialog.Content>
-              <Dialog.Header>
-                <Dialog.Title>Are you sure absolutely sure?</Dialog.Title>
-                <Dialog.Description>
-                  This action cannot be undone. This will permanently delete your account
-                  and remove your data from our servers.
-                </Dialog.Description>
-              </Dialog.Header>
-            </Dialog.Content>
-          </Dialog.Root>
-
-
+            <Button href="/schedule">
+              Book Now
+            </Button>
         </CardFooter>
       </Card>
     {/each}
