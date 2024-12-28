@@ -68,6 +68,12 @@
 		</div>
 		<div class="flex flex-col max-w-6xl w-full">
 			<div class="">
+				<div id="promo-banner" class="fixed bottom-4 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row items-center justify-center gap-4 bg-red-200 rounded-xl p-4 border-2 border-primary shadow-lg max-w-[90%] w-max mx-auto">
+					<div class="text-center">
+						New plant diva workshop coming soon! Sign up now to get 20% off!
+					</div>
+					<Button>Buy Tickets</Button>
+				</div>
 				<div class="text-center flex flex-col gap-2 bg-teal-900 rounded-xl p-4 text-white tracking-wide opacity-90">
 					<h1 class="text-2xl md:text-5xl font-light font-serif">
 						Folkways Practitioner and Ancestor Specialist
@@ -80,13 +86,6 @@
 						<Button>View Services</Button>
 					</div>
 				</div>
-				<!-- <img src="/images/donyelle-face.png" alt="Hero" class="h-auto max-w-[200px] md:max-w-[400px] rounded-md" /> -->
-			</div>
-			<div id="promo-banner" class="absolute bottom-20 md:bottom-40 left-0 right-0 mx-8 flex flex-col md:flex-row bg-red-200 items-center rounded-xl p-2 gap-4 md:gap-0 md:justify-between border-2 border-primary">
-				<div class="text-center md:text-left">
-					New plant diva workshop coming soon! Sign up now to get 20% off!
-				</div>
-				<Button>Buy Tickets</Button>
 			</div>
 		</div>
 	</section>
