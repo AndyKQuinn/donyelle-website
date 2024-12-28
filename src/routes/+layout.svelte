@@ -26,7 +26,7 @@
   ]
 </script>
 
-<div class="fixed top-0 left-0 right-0 border-b z-10">
+<div class="fixed top-0 left-0 right-0 border-b z-10 bg-red-200">
   <div class="flex h-14 items-center justify-center md:justify-between md:container">
     <div class="hidden lg:block text-2xl">
       <a href="/">
