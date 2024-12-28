@@ -60,7 +60,7 @@
 		class="relative flex min-h-screen items-center justify-center px-4"
 	>
 		<div class="flex flex-col md:flex-row items-center max-w-6xl gap-12">
-			<div class="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden bg-secondary flex-shrink-0">
+			<div class="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden bg-secondary flex-shrink-0 mt-4 md:mt-0">
 				<img
 					src="/images/donyelle-face.png"
 					alt="Donyelle Headington"

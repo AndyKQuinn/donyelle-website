@@ -21,41 +21,34 @@
   <div>
     <h1 class="flex justify-center text-4xl p-4">My Services</h1>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 pt-4 px-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 p-4">
     {#each services as service, i}
-    {console.log("Service: ", service)}
-      <Card class="max-w-96 border-2 border-primary">
+      <Card class="border-2 border-primary flex flex-col justify-between h-[32rem]">
         <img
           src={imageBasePath + service.id + "/" + service.image}
           alt={service.title}
           class="h-48 w-full rounded-lg object-cover"
         />
         <CardHeader>
-          <div class="flex items-center justify-between">
-            <CardTitle>{service.title}</CardTitle>
-            <Badge class="text-sm text-white">{service.price}</Badge>
+          <div class="flex justify-between items-center">
+            <CardTitle class="text-xl line-clamp-1">{service.title}</CardTitle>
+            <Badge class="text-sm text-white shrink-0">{service.price}</Badge>
           </div>
-          <CardDescription class="py-4">{service.description}</CardDescription>
         </CardHeader>
-        <!-- <CardContent>
-          <ul class="list-inside list-disc space-y-2">
-            {#each service.features as feature}
-              <li class="list-none text-center">{feature}</li>
-            {/each}
-          </ul>
-        </CardContent> -->
-        <CardFooter class="flex justify-center gap-8">
+        <CardContent>
+          <CardDescription class="line-clamp-4 h-24">{service.description}</CardDescription>
+        </CardContent>
+        <CardFooter class="flex flex-col sm:flex-row justify-between gap-2 mt-auto">
           <Dialog.Root>
-
-            <Dialog.Trigger class="flex gap-2 bg-primary text-white rounded-md">
-              Learn More
+            <Dialog.Trigger class="w-full sm:w-auto">
+               <p class="border-2 border-primary p-1 px-2 rounded-lg">More Details
             </Dialog.Trigger>
 
             <Dialog.Content class="border-2 border-primary">
-              <Dialog.Header>
+              <Dialog.Header class="flex flex-col gap-4">
                 <Dialog.Title>More Details</Dialog.Title>
                 <Dialog.Description>
-                  Here is where we will provide more details about the service. All sorts of juicy awesome tidbits of information.
+                  {@html service.details}
                 </Dialog.Description>
                 <Dialog.Close>
                   <Button>Close</Button>
@@ -63,9 +56,9 @@
               </Dialog.Header>
             </Dialog.Content>
           </Dialog.Root>
-            <Button class="w-32" href="/schedule">
-              Book Now
-            </Button>
+          <Button href="/schedule" class="text-md w-full sm:w-auto">
+            Book Now
+          </Button>
         </CardFooter>
       </Card>
     {/each}

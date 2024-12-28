@@ -57,29 +57,30 @@
 
 <main class="overflow-x-hidden">
 	<section
-		class="relative flex min-h-screen items-center justify-center"
+		class="relative flex min-h-screen items-center justify-center px-4 py-12 md:py-0"
 	>
-		<div class="flex flex-col">
-		<div class="flex gap-8 align-center items-center">
-			<div class="text-center flex flex-col gap-2">
-				<h1 class="text-6xl font-light">
-					Begin Your Healing Journey
-				</h1>
-				<p class="mx-auto text-lg">
-					Find balance, peace, and natural healing through holistic practices
-				</p>
-				<div class="flex justify-center gap-4 p-4">
-
-					<Button>Learn More</Button>
-					<Button>View Services</Button>
+		<div class="flex flex-col max-w-6xl w-full">
+			<div class="flex flex-col md:flex-row gap-8 align-center items-center">
+				<div class="text-center md:text-left flex flex-col gap-2">
+					<h1 class="text-4xl md:text-6xl font-light">
+						Begin Your Healing Journey
+					</h1>
+					<p class="mx-auto md:mx-0 text-base md:text-lg">
+						Find balance, peace, and natural healing through holistic practices
+					</p>
+					<div class="flex justify-center md:justify-start gap-4 p-4">
+						<Button>Learn More</Button>
+						<Button>View Services</Button>
+					</div>
 				</div>
+				<img src="/images/donyelle-face.png" alt="Hero" class="h-auto max-w-[200px] md:max-w-[400px] rounded-lg" />
 			</div>
-			<img src="/images/donyelle-face.png" alt="Hero" class="h-auto" />
-		</div>
-		<div id="promo-banner" class="flex mt-20 bg-red-200 align-center items-center rounded-xl p-4 justify-between">
-			<div>New plant diva workshop coming soon! Sign up now to get 20% off!</div>
-			<Button>Buy Tickets</Button>
-		</div>
+			<div id="promo-banner" class="flex flex-col md:flex-row mt-8 md:mt-20 bg-red-200 items-center rounded-xl p-2 gap-4 md:gap-0 md:justify-between border-2 border-primary">
+				<div class="text-center md:text-left">
+					New plant diva workshop coming soon! Sign up now to get 20% off!
+				</div>
+				<Button>Buy Tickets</Button>
+			</div>
 		</div>
 	</section>
 
@@ -101,9 +102,9 @@
 		</div>
 	</section>
 
-	<section id="services" class="py-20">
+	<section id="services" class="py-12 md:py-20">
 		<div class="container mx-auto px-4">
-			<h2 class="mb-12 text-center text-4xl" in:fly={{ y: 50, duration: 1000 }}>
+			<h2 class="mb-8 md:mb-12 text-center text-3xl md:text-4xl" in:fly={{ y: 50, duration: 1000 }}>
 				My Services
 			</h2>
 			<div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
@@ -120,7 +121,7 @@
 		</div>
 	</section>
 
-	<section id="testimonials" class="bg-sage-100 h-96 py-20">
+	<section id="testimonials" class="bg-sage-100 py-12 md:py-20 min-h-[24rem]">
 		<div
 			class="container mx-auto px-4"
 		>
@@ -150,9 +151,9 @@
 		</div>
 	</section>
 
-	<section id="footer" class="bg-secondary py-12">
+	<section id="footer" class="bg-secondary py-8 md:py-12">
 		<div class="container mx-auto px-4">
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+			<div class="grid grid-cols-1 gap-8 md:grid-cols-3 text-center md:text-left">
 				<div>
 					<h3 class="mb-4 text-xl font-semibold">Contact Me</h3>
 					<div class="flex flex-col">
