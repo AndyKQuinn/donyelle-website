@@ -73,7 +73,7 @@
 						<Button>View Services</Button>
 					</div>
 				</div>
-				<img src="/images/donyelle-face.png" alt="Hero" class="h-auto max-w-[200px] md:max-w-[400px] rounded-lg" />
+				<img src="/images/donyelle-face.png" alt="Hero" class="h-auto max-w-[200px] md:max-w-[400px] rounded-md" />
 			</div>
 			<div id="promo-banner" class="flex flex-col md:flex-row mt-8 md:mt-20 bg-red-200 items-center rounded-xl p-2 gap-4 md:gap-0 md:justify-between border-2 border-primary">
 				<div class="text-center md:text-left">
@@ -150,42 +150,6 @@
 			</div>
 		</div>
 	</section>
-
-	<section id="footer" class="bg-secondary py-8 md:py-12">
-		<div class="container mx-auto px-4">
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-3 text-center md:text-left">
-				<div>
-					<h3 class="mb-4 text-xl font-semibold">Contact Me</h3>
-					<div class="flex flex-col">
-						<div class="flex items-center gap-4 p-2">
-							<p class="text-2xl">☎️</p>
-							<p>612-298-7122</p>
-						</div>
-						<div class="flex items-center gap-4 p-2">
-							<p class="text-2xl">📧</p>
-							<a href="mailto:Donyellemary12@gmail.com">Donyellemary12@gmail.com</a>
-						</div>
-					</div>
-				</div>
-				<div>
-					<h3 class="mb-4 text-xl">Hours</h3>
-					<p class="mb-2">Monday - Friday: 9am - 7pm</p>
-					<p class="mb-2">Saturday: 10am - 5pm</p>
-					<p>Sunday: Unavailable</p>
-				</div>
-				<div>
-					<h3 class="mb-4 text-xl">Follow Us</h3>
-					<div class="flex gap-4 text-2xl">
-						<p>🐥</p>
-						<p>😈</p>
-					</div>
-				</div>
-			</div>
-			<div class="mt-8 pt-8 text-center">
-				<p>&copy; {new Date().getFullYear()} Donyelle Headington ~ All rights reserved.</p>
-			</div>
-		</div>
-	</section>
 </main>
 
 <style>
@@ -193,11 +157,4 @@
 		scroll-behavior: smooth;
 	}
 
-	.bg-sage-50 {
-		background-color: #f7f9f7;
-	}
-
-	.bg-sage-100 {
-		background-color: #e8efe8;
-	}
 </style>
