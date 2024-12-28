@@ -12,9 +12,12 @@
 
   import * as Dialog from "$lib/components/ui/dialog";
   import type { PageData } from "./$types.js";
+  import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
+
   export let data: PageData;
+
   const services = data.services;
-  const imageBasePath = 'http://localhost:8090/api/files/services/';
+  const imageBasePath = `${PUBLIC_POCKETBASE_URL}/api/files/services/`;
 </script>
 
 <main>
@@ -41,7 +44,7 @@
         <CardFooter class="flex flex-col sm:flex-row justify-between gap-2 mt-auto">
           <Dialog.Root>
             <Dialog.Trigger class="w-full sm:w-auto">
-               <p class="border-2 border-primary p-1 px-2 rounded-lg">More Details
+                <p class="border-2 border-primary p-1 px-2 rounded-lg">More Details
             </Dialog.Trigger>
 
             <Dialog.Content class="border-2 border-primary">
