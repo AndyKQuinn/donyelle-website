@@ -27,19 +27,19 @@
 </script>
 
 <div class="fixed top-0 left-0 right-0 border-b z-10 bg-secondary">
-  <div class="container flex h-14 items-center justify-between">
-    <div class="hidden lg:block">
-      <a href="/" class="text-xl">
+  <div class="flex h-14 items-center justify-center md:justify-between md:container">
+    <div class="hidden lg:block text-2xl">
+      <a href="/">
          Donyelle Headington
       </a>
     </div>
 
-    <nav class="flex items-center gap-2 sm:gap-4 mx-auto lg:mx-0">
+    <nav class="flex items-center">
         {#each navigationItems as item}
           <Button
             href={item.href}
             variant="ghost"
-            class="text-sm sm:text-base lg:text-lg px-2 sm:px-4"
+            class="text-lg"
           >
             {item.label}
           </Button>
@@ -54,8 +54,8 @@
 
 <section id="footer" class="bg-secondary py-8 md:py-12">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-3 text-center md:text-left">
-      <div>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:text-left">
+      <div class="flex flex-col items-center md:text-left">
         <h3 class="mb-4 text-xl font-semibold">Contact Me</h3>
         <div class="flex flex-col">
           <div class="flex items-center gap-4 p-2">
@@ -68,13 +68,13 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="flex flex-col items-center md:text-left">
         <h3 class="mb-4 text-xl">Hours</h3>
         <p class="mb-2">Monday - Friday: 9am - 7pm</p>
         <p class="mb-2">Saturday: 10am - 5pm</p>
         <p>Sunday: Unavailable</p>
       </div>
-      <div>
+      <div class="flex flex-col items-center md:text-left">
         <h3 class="mb-4 text-xl">Follow Us</h3>
         <div class="flex gap-4 text-2xl">
           <p>🐥</p>

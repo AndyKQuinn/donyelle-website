@@ -59,94 +59,34 @@
 	<section
 		class="relative flex min-h-screen items-center justify-center px-4 py-12 md:py-0"
 	>
+		<div class="absolute inset-0 -z-10">
+			<img
+				src="/images/background-1.png"
+				alt="Background"
+				class="w-full h-full object-cover opacity-50"
+			/>
+		</div>
 		<div class="flex flex-col max-w-6xl w-full">
-			<div class="flex flex-col md:flex-row gap-8 align-center items-center">
-				<div class="text-center md:text-left flex flex-col gap-2">
-					<h1 class="text-4xl md:text-6xl font-light">
-						Begin Your Healing Journey
+			<div class="">
+				<div class="text-center flex flex-col gap-2 bg-teal-900 rounded-xl p-4 text-white tracking-wide opacity-90">
+					<h1 class="text-2xl md:text-5xl font-light font-serif">
+						Folkways Practitioner and Ancestor Specialist
 					</h1>
-					<p class="mx-auto md:mx-0 text-base md:text-lg">
-						Find balance, peace, and natural healing through holistic practices
+					<p class="text-base md:text-lg font-serif font-light">
+						Learn ~ Connect ~ Heal
 					</p>
-					<div class="flex justify-center md:justify-start gap-4 p-4">
+					<div class="flex justify-center gap-4 p-2">
 						<Button>Learn More</Button>
 						<Button>View Services</Button>
 					</div>
 				</div>
-				<img src="/images/donyelle-face.png" alt="Hero" class="h-auto max-w-[200px] md:max-w-[400px] rounded-md" />
+				<!-- <img src="/images/donyelle-face.png" alt="Hero" class="h-auto max-w-[200px] md:max-w-[400px] rounded-md" /> -->
 			</div>
-			<div id="promo-banner" class="flex flex-col md:flex-row mt-8 md:mt-20 bg-red-200 items-center rounded-xl p-2 gap-4 md:gap-0 md:justify-between border-2 border-primary">
+			<div id="promo-banner" class="absolute bottom-20 md:bottom-40 left-0 right-0 mx-8 flex flex-col md:flex-row bg-red-200 items-center rounded-xl p-2 gap-4 md:gap-0 md:justify-between border-2 border-primary">
 				<div class="text-center md:text-left">
 					New plant diva workshop coming soon! Sign up now to get 20% off!
 				</div>
 				<Button>Buy Tickets</Button>
-			</div>
-		</div>
-	</section>
-
-	<section id="about" class="bg-sage-50 py-20">
-		<div
-			class="container mx-auto px-4"
-		>
-			<h2 class="mb-12 text-center text-4xl">My Approach to Healing</h2>
-			<div class="mx-auto max-w-3xl text-lg leading-relaxed">
-				<p class="mb-6">
-					We believe in treating the whole person – body, mind, and spirit. My holistic approach
-					combines ancient wisdom with modern understanding to help you achieve optimal wellness.
-				</p>
-				<p>
-					Through gentle and natural methods, we guide you on your path to healing, helping you
-					reconnect with your body's innate wisdom and ability to heal.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<section id="services" class="py-12 md:py-20">
-		<div class="container mx-auto px-4">
-			<h2 class="mb-8 md:mb-12 text-center text-3xl md:text-4xl" in:fly={{ y: 50, duration: 1000 }}>
-				My Services
-			</h2>
-			<div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
-				{#each services as service, i}
-					<div
-						class="bg-sage-50 rounded-lg p-8 transition-shadow duration-300 hover:shadow-lg"
-						in:fly={{ x: i % 2 === 0 ? -50 : 50, duration: 1000, delay: 200 * i }}
-					>
-						<h3 class="mb-4 text-2xl text-emerald-700">{service.title}</h3>
-						<p class="text-gray-600">{service.description}</p>
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
-
-	<section id="testimonials" class="bg-sage-100 py-12 md:py-20 min-h-[24rem]">
-		<div
-			class="container mx-auto px-4"
-		>
-			<h2 class="mb-12 text-center text-4xl">Client Stories</h2>
-			<div class="mx-auto max-w-4xl">
-				{#each [testimonials[currentTestimonialIndex]] as testimonial (currentTestimonialIndex)}
-					<div in:fade={{ duration: 400 }}>
-						<blockquote class="text-center text-xl italic">
-							"{testimonial.quote}"
-							<footer class="mt-4">— {testimonial.author}</footer>
-						</blockquote>
-					</div>
-				{/each}
-				<div class="mt-8 flex justify-center gap-2">
-					{#each testimonials as _, i}
-						<button
-							class="h-2 w-2 rounded-full transition-colors duration-300 {i ===
-							currentTestimonialIndex
-								? 'bg-primary'
-								: 'bg-secondary'}"
-							on:click={() => (currentTestimonialIndex = i)}
-							aria-label="Go to testimonial {i + 1}"
-						></button>
-					{/each}
-				</div>
 			</div>
 		</div>
 	</section>
