@@ -27,6 +27,7 @@
   {#if services && services.length > 0}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 p-4">
       {#each services as service, i}
+        {console.log("Path to image: ", imageBasePath + service.id + "/" + service.image)}
         <Card class="border-2 border-primary flex flex-col justify-between h-[32rem]">
           <img
             src={imageBasePath + service.id + "/" + service.image}
