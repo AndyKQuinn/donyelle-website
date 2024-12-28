@@ -18,15 +18,17 @@
 
   const services = data.services;
   const imageBasePath = `${PUBLIC_POCKETBASE_URL}/api/files/services/`;
+  console.log("Services: ", services);
+  console.log("Image base path: ", imageBasePath);
 </script>
 
 <main>
   <div>
     <h1 class="flex justify-center text-4xl p-4">My Services</h1>
   </div>
-  {#if services && services.length > 0}
+  <!-- {#if services && services.length > 0}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 p-4">
-      {#each services as service, i}
+      {#each services as service}
         {console.log("Path to image: ", imageBasePath + service.id + "/" + service.image)}
         <Card class="border-2 border-primary flex flex-col justify-between h-[32rem]">
           <img
@@ -68,9 +70,9 @@
         </Card>
       {/each}
     </div>
-  {:else}
+  {:else} -->
     <div class="flex justify-center items-center p-8">
       <p class="text-lg text-muted-foreground">No services available at the moment.</p>
     </div>
-  {/if}
+  <!-- {/if} -->
 </main>

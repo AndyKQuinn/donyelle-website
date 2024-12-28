@@ -5,6 +5,7 @@ import {
 } from '$env/static/private'
 
 export async function load({ locals }) {
+  console.log('Loading services')
   try {
     await locals.pb
       .collection('_superusers')
@@ -12,7 +13,7 @@ export async function load({ locals }) {
     const services = await locals.pb.collection('services').getFullList({
       // sort: 'created',
     })
-
+    console.log('Services loaded:', services)
     return {
       services: serializeNonPOJOs(services),
     }
