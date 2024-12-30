@@ -57,7 +57,7 @@
 <main class="overflow-x-hidden">
 	<section
 		id="hero"
-		class="relative flex min-h-screen items-center justify-center px-4"
+		class="relative flex min-h-screen items-center justify-center px-4 my-14"
 	>
 		<div class="flex flex-col md:flex-row items-center max-w-6xl gap-12">
 			<div class="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden bg-secondary flex-shrink-0 mt-4 md:mt-0">
@@ -83,7 +83,7 @@
 		</div>
 	</section>
 
-	<section id="about" class="bg-sage-50 py-20">
+	<section id="about" class="py-20">
 		<div
 			class="container mx-auto px-4"
 		>
@@ -103,17 +103,16 @@
 
 	<section id="services" class="py-20">
 		<div class="container mx-auto px-4">
-			<h2 class="mb-12 text-center text-4xl" in:fly={{ y: 50, duration: 1000 }}>
+			<h2 class="mb-12 text-center text-4xl">
 				My Services
 			</h2>
-			<div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+			<div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 text-primary text-xl">
 				{#each services as service, i}
 					<div
-						class="bg-sage-50 rounded-lg p-8 transition-shadow duration-300 hover:shadow-lg"
-						in:fly={{ x: i % 2 === 0 ? -50 : 50, duration: 1000, delay: 200 * i }}
+						class="rounded-lg p-8 transition-shadow duration-300 hover:shadow-lg"
 					>
-						<h3 class="mb-4 text-2xl text-emerald-700">{service.title}</h3>
-						<p class="text-gray-600">{service.description}</p>
+						<h3 class="mb-4 text-2xl">{service.title}</h3>
+						<p>{service.description}</p>
 					</div>
 				{/each}
 			</div>

@@ -20,14 +20,14 @@
   const imageBasePath = `${PUBLIC_POCKETBASE_URL}/api/files/services/`;
 </script>
 
-<main>
+<main class="my-14">
   <div>
     <h1 class="flex justify-center text-4xl p-4">My Services</h1>
   </div>
   {#if services && services.length > 0}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 p-4">
+    <div class="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 p-4">
       {#each services as service}
-        <Card class="border-2 border-primary flex flex-col justify-between h-[32rem]">
+        <Card class="border-2 border-primary flex flex-col justify-between h-[32rem] w-full sm:w-[calc(100%-2rem)] md:w-[calc(50%-2rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(25%-2rem)]">
           <img
             src={imageBasePath + service.id + "/" + service.image}
             alt={service.title}
