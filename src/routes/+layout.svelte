@@ -9,6 +9,15 @@
   import { Button } from "$lib/components/ui/button"
 
   import * as Select from "$lib/components/ui/select"
+
+  import Sun from "lucide-svelte/icons/sun";
+  import Moon from "lucide-svelte/icons/moon";
+  import { ModeWatcher, toggleMode, setMode, resetMode } from "mode-watcher";
+  import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+  import Computer from "lucide-svelte/icons/laptop";
+  import { colorTheme, setColorTheme } from '$lib/stores/theme'
+  import Palette from "lucide-svelte/icons/palette"
+
   interface Props {
     data: PageData
     children?: Snippet
@@ -24,6 +33,12 @@
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
     { href: '/contact', label: 'Contact' }
+  ]
+
+  const availableThemes = [
+    { name: 'Default', value: 'default' },
+    { name: 'Blue', value: 'blue' },
+    { name: 'Green', value: 'green' }
   ]
 
 </script>
@@ -47,6 +62,40 @@
               {item.label}
             </Button>
           {/each}
+
+          <DropdownMenu.Root>
+            <DropdownMenu.Trigger asChild let:builder>
+              <Button builders={[builder]} variant="ghost" size="icon">
+                <Palette class="h-[1.2rem] w-[1.2rem]" />
+                <span class="sr-only">Toggle theme</span>
+              </Button>
+            </DropdownMenu.Trigger>
+            <DropdownMenu.Content align="end">
+              <DropdownMenu.Label>Color Theme</DropdownMenu.Label>
+              {#each availableThemes as theme}
+                <DropdownMenu.Item on:click={() => setColorTheme(theme.value)}>
+                  <div class="w-4 h-4 rounded-full mr-2 bg-primary" class:ring-2={$colorTheme === theme.value} />
+                  <span>{theme.name}</span>
+                </DropdownMenu.Item>
+              {/each}
+              <DropdownMenu.Separator />
+              <DropdownMenu.Label>Mode</DropdownMenu.Label>
+              <DropdownMenu.Item on:click={() => setMode("light")}>
+                <Sun class="h-4 w-4 mr-2" />
+                <span>Light</span>
+              </DropdownMenu.Item>
+              <DropdownMenu.Item on:click={() => setMode("dark")}>
+                <Moon class="h-4 w-4 mr-2" />
+                <span>Dark</span>
+              </DropdownMenu.Item>
+              <DropdownMenu.Item on:click={() => resetMode()}>
+                <Computer class="h-4 w-4 mr-2" />
+                <span>System</span>
+              </DropdownMenu.Item>
+            </DropdownMenu.Content>
+          </DropdownMenu.Root>
+
+
       </nav>
     </div>
   </div>
@@ -59,6 +108,7 @@
 				class="w-full h-full object-cover opacity-50"
 			/>
 		</div>
+    <ModeWatcher />
     {@render children?.()}
   </div>
 
