@@ -71,14 +71,14 @@
 				<h1 class="mb-6 text-5xl font-light md:text-7xl">
 					About Me
 				</h1>
-        <div class="flex gap-2 flex-col">
-				<p>
-          Welcome community. I am Sister Donyelle, an artist, reader, and healing practitioner from Minneapolis, Minnesota. From my home and garden, I cultivate supportive services to help those desiring to improve and enrich their lives.
-        </p>
-        <p>
-          My works as a healing practitioner utilize medicinal and magical herbs, fiber, sculptural and literary arts, and a spiritualist approach. All of which are guided by a deeply held belief in our Living Ancestors. The beings that lend their wisdom and power to enable the healing of individuals, communities, and the land.
-				</p>
-      </div>
+				<div class="flex gap-2 flex-col p-6 rounded-lg shadow-sm">
+					<p>
+						Welcome community. I am Sister Donyelle, an artist, reader, and healing practitioner from Minneapolis, Minnesota. From my home and garden, I cultivate supportive services to help those desiring to improve and enrich their lives.
+					</p>
+					<p>
+						My works as a healing practitioner utilize medicinal and magical herbs, fiber, sculptural and literary arts, and a spiritualist approach. All of which are guided by a deeply held belief in our Living Ancestors. The beings that lend their wisdom and power to enable the healing of individuals, communities, and the land.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>

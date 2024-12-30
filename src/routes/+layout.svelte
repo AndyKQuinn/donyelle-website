@@ -8,6 +8,7 @@
 
   import { Button } from "$lib/components/ui/button"
 
+  import * as Select from "$lib/components/ui/select"
   interface Props {
     data: PageData
     children?: Snippet
@@ -24,6 +25,7 @@
     { href: '/services', label: 'Services' },
     { href: '/contact', label: 'Contact' }
   ]
+
 </script>
 
 <div class="flex min-h-screen flex-col">
@@ -50,12 +52,12 @@
   </div>
 
   <div class="flex-1">
-    <div class="absolute inset-0 -z-10">
-			<!-- <img
-				src="/images/background-1.png"
+    <div class="absolute inset-0 -z-10 opacity-80">
+			<img
+				src="/images/image1.jpeg"
 				alt="Background"
 				class="w-full h-full object-cover opacity-50"
-			/> -->
+			/>
 		</div>
     {@render children?.()}
   </div>
