@@ -38,7 +38,10 @@
   const availableThemes = [
     { name: 'Default', value: 'default' },
     { name: 'Blue', value: 'blue' },
-    { name: 'Green', value: 'green' }
+    { name: 'Brown', value: 'brown' },
+    { name: 'Green', value: 'green' },
+    { name: 'Olive', value: 'olive' },
+    { name: 'Purple', value: 'purple' }
   ]
 
 </script>
@@ -66,7 +69,7 @@
           <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild let:builder>
               <Button builders={[builder]} variant="ghost" size="icon">
-                <Palette class="h-[1.2rem] w-[1.2rem]" />
+                <Palette class="h-[1.6rem] w-[1.6rem]" />
                 <span class="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenu.Trigger>
@@ -74,7 +77,6 @@
               <DropdownMenu.Label>Color Theme</DropdownMenu.Label>
               {#each availableThemes as theme}
                 <DropdownMenu.Item on:click={() => setColorTheme(theme.value)}>
-                  <div class="w-4 h-4 rounded-full mr-2 bg-primary" class:ring-2={$colorTheme === theme.value} />
                   <span>{theme.name}</span>
                 </DropdownMenu.Item>
               {/each}
