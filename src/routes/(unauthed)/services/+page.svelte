@@ -60,7 +60,7 @@
                 </Dialog.Header>
               </Dialog.Content>
             </Dialog.Root>
-            <Button href="/schedule" class="text-md w-full sm:w-auto">
+            <Button href="/schedule?service={service.title}" class="text-md w-full sm:w-auto">
               Book Now
             </Button>
           </CardFooter>

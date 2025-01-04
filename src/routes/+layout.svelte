@@ -8,8 +8,6 @@
 
   import { Button } from "$lib/components/ui/button"
 
-  import * as Select from "$lib/components/ui/select"
-
   import Sun from "lucide-svelte/icons/sun";
   import Moon from "lucide-svelte/icons/moon";
   import { ModeWatcher, toggleMode, setMode, resetMode } from "mode-watcher";
@@ -37,11 +35,10 @@
 
   const availableThemes = [
     { name: 'Default', value: 'default' },
-    { name: 'Blue', value: 'blue' },
-    { name: 'Brown', value: 'brown' },
-    { name: 'Green', value: 'green' },
-    { name: 'Olive', value: 'olive' },
-    { name: 'Purple', value: 'purple' }
+    { name: 'Purple 1 - Light', value: 'purple-two' },
+    { name: 'Purple 1 - Dark', value: 'dark-purple-two' },
+    { name: 'Purple 2 - Light', value: 'purple-three' },
+    { name: 'Purple 2 - Dark', value: 'dark-purple-three' },
   ]
 
 </script>
@@ -74,7 +71,7 @@
               </Button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content align="end">
-              <DropdownMenu.Label>Color Theme</DropdownMenu.Label>
+              <DropdownMenu.Label class="text-lg">Color Theme</DropdownMenu.Label>
               {#each availableThemes as theme}
                 <DropdownMenu.Item on:click={() => setColorTheme(theme.value)}>
                   <span>{theme.name}</span>
