@@ -119,7 +119,7 @@
 		</div>
 	</section>
 
-	<section id="testimonials" class="bg-sage-100 h-96 py-20">
+	<section id="testimonials" class="bg-primary h-96 py-20">
 		<div
 			class="container mx-auto px-4"
 		>

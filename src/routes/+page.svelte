@@ -3,20 +3,7 @@
 
   const user = getUserContext()
 
-	import { onMount, onDestroy } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
 	import { Button } from '$lib/components/ui/button';
-
-	// Enhanced intersection observer with different thresholds per section
-	onMount(() => {
-		testimonialInterval = setInterval(() => {
-			currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
-		}, 5000);
-	});
-
-	onDestroy(() => {
-		if (testimonialInterval) clearInterval(testimonialInterval);
-	});
 
 	const services = [
 		{
@@ -30,25 +17,6 @@
 		{ title: 'Doll Workshops', description: 'Learn techniques for inner peace and mindfulness.' },
 		{ title: 'Massage and healing arts', description: 'Discover the healing power of nature.' }
 	];
-
-	const testimonials = [
-		{
-			quote:
-				'Donyelle has helped me tremendously with my neck and upper back pain. She is also a fabulous person with a heart of gold. I highly recommend her any of her services.',
-			author: 'Andy Q.'
-		},
-		{
-			quote: 'Meow meow. Meow meow, meow meow. Meow, meow meow... meeeeeeeeow.',
-			author: 'Kitty C.'
-		},
-		{
-			quote: 'Woof. Woof woof. Woof arf arf, arf arf woof. Woof.',
-			author: 'Doge'
-		}
-	];
-
-	let currentTestimonialIndex = 0;
-	let testimonialInterval: ReturnType<typeof setInterval>;
 </script>
 
 <svelte:head>
@@ -59,13 +27,6 @@
 	<section
 		class="relative flex min-h-screen items-center justify-center px-4 py-12 md:py-0"
 	>
-		<!-- <div class="absolute inset-0 -z-10">
-			<img
-				src="/images/background-1.png"
-				alt="Background"
-				class="w-full h-full object-cover opacity-50"
-			/>
-		</div> -->
 		<div class="flex flex-col max-w-6xl w-full">
 			<div class="">
 				<div id="promo-banner" class="fixed bottom-4 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row items-center justify-center gap-4 bg-primary rounded-xl p-4 border-2 border-primary shadow-lg max-w-[90%] w-max mx-auto">
